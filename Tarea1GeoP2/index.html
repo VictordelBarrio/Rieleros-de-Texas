@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Ingresa las coordenadas!</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="col">
+          <div class="row">
+            <h1>Ingresa las coordenadas</h1>
+          </div>
+          <div class="row">
+            <div id="mapid" style="height: 500px;"></div>
+          </div>
+          <div class="row">
+            <input type="number" placeholder="latitude" id="lat">
+            <input type="number" placeholder="longitude" id="long">
+            <button onclick="addTolst()">Ingresar Coordenadas</button>
+          </div>
+        </div>
+      </div>
+
+    <script>
+        const mapCoords = new Map();
+        function addTolst(){
+
+            var lat = document.getElementById("lat").value; 
+            var long = document.getElementById("long").value; 
+
+            //console.log(lat);
+            //console.log(long);
+
+            mapCoords.set(lat, long);
+            
+            for (let [key, value] of mapCoords) {
+                console.log(key);
+                console.log(value);
+                L.marker([key, value]).addTo(mymap);
+            }
+           
+        }
+
+        var mymap = L.map("mapid").setView(
+            [21.15223412617155, -101.7113883047542],
+            5
+        );
+
+        L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        //var salle = L.marker([21.15223412617155, -101.7113883047542]).addTo(
+        //    mymap
+        //);
+
+
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
