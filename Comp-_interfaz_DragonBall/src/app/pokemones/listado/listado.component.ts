@@ -11,12 +11,11 @@ export class ListadoComponent {
 
   pokemonEliminado:any;
   borrarPokemon(){
-    this.pokemonEliminado = this.dragonBall.pop(); //Es iportante el || para que no dé erorr
+    this.pokemonEliminado = this.dragonBall.pop();
   }
 }
 
 interface DragonBall{
   nombre:string,
   color: string,
-  //mostarPS:() => void; //No recibe nada pero no entrega nada
 }
