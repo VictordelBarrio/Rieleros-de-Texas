@@ -1,0 +1,20 @@
+<p>listado works!</p>
+
+<ul>
+  <li *ngFor="let pokemon of dragonBall; let i = index">
+    {{ i + 1 }}-{{ pokemon.nombre }}
+  </li>
+</ul>
+
+<button (click)="borrarPokemon()">Borrar</button>
+
+<div *ngIf="pokemonEliminado; else noBorrado">
+  <h3>
+    DragonBall Eliminado: <small>{{ pokemonEliminado.color }}</small>
+  </h3>
+</div>
+
+<ng-template #noBorrado>
+  <!-- Referencia local -->
+  <h3>No ha borrado nada</h3>
+</ng-template>
