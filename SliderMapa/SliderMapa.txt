@@ -1,0 +1,2 @@
+Silder Mapa
+silder change zoom value and button to center zoom value
