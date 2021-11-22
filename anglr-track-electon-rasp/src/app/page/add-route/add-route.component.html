@@ -1,0 +1,35 @@
+<mat-grid-list cols="6" rowHeight="200px">
+
+    <mat-grid-tile colspan="6" rowspan="1" style="background: lightblue">
+        Add New Bus Route
+        <div style="margin-top: 5%;">
+            <button class="btnLog" mat-raised-button color="primary" (click)="goHome()">Return Home</button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="2"></mat-grid-tile>
+
+    <mat-grid-tile colspan="4" rowspan="2">
+        
+        <form class="inputs" [formGroup]="routeForm" >
+
+            <mat-form-field class="inputStyle" appearance="fill">
+              <mat-label>Name of Route</mat-label>
+              <input autocomplete="off" formControlName="name" type="text" matInput placeholder="Name of Route">
+            </mat-form-field>
+
+            <div style="margin-top: 5%; margin-bottom: 5%;">
+                <button class="btnLog" mat-raised-button color="primary" (click)="createRoute()">Create Route</button>
+            </div>
+            <div style="margin-top: 5%; margin-bottom: 5%;">
+                <button class="btnLog" mat-raised-button color="primary" (click)="stop()">Stop Route Creation</button>
+            </div>
+    
+          </form>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="2"></mat-grid-tile>
+
+    <mat-grid-tile colspan="6" rowspan="1"></mat-grid-tile>
+    
+</mat-grid-list>

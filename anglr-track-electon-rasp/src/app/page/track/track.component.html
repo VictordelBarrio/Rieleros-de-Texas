@@ -1,0 +1,36 @@
+<mat-grid-list cols="6" rowHeight="200px">
+
+    <mat-grid-tile colspan="6" rowspan="1" style="background: lightblue; text-align: center;">
+        <h1>Track Bus</h1> 
+        <div style="margin-top: 5%;">
+            <button class="btnLog" mat-raised-button color="primary" (click)="goHome()">Return Home</button>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="2"></mat-grid-tile>
+
+    <mat-grid-tile colspan="4" rowspan="2">
+        
+        <form class="inputs" [formGroup]="locForm" >
+
+            <mat-form-field class="inputStyle" appearance="fill">
+              <mat-label>Enter Bus Id</mat-label>
+              <input autocomplete="off" formControlName="name" type="text" matInput placeholder="Bus ID">
+            </mat-form-field>
+
+            <div style="margin-top: 5%; margin-bottom: 5%;">
+                <button class="btnLog" mat-raised-button color="primary" (click)="startTracking()">Track Bus</button>
+            </div>
+            <div style="margin-top: 5%; margin-bottom: 5%;">
+                <button class="btnLog" mat-raised-button color="primary" (click)="stop()">Stop Tracking</button>
+            </div>
+    
+          </form>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="2"></mat-grid-tile>
+
+    <mat-grid-tile colspan="6" rowspan="1"></mat-grid-tile>
+    
+</mat-grid-list>
+
