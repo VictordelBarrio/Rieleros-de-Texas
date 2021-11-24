@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router'; 
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+
+
+  constructor(private router:Router, private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+    
+   }
 
   ngOnInit(): void {
+    
   }
 
   change(r: string){
