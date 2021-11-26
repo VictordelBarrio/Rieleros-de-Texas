@@ -21,11 +21,11 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
 
           // if (!user.emailVerified)                            // if the user hasn't verified their email, send them to that page
           //     this.router.navigate(['/verify-email']);
-
+          console.log('From auth guard true')
           resolve(true);
         } else {
           console.log('Auth Guard: user is not logged in');
-          this.router.navigate(['/home']);                   // a logged out user will always be sent to home
+          this.router.navigate(['/login']);                   // a logged out user will always be sent to home
           resolve(false);
         }
       });
